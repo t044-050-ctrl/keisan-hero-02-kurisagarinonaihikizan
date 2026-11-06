@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>計算ヒーロー02</title>
-  <meta property="og:title" content="計算ヒーロー02">
-    <meta property="og:description" content="【１年算数ひきざん】くりさがりのないひきざんの練習アプリです。">
-    <meta property="og:type" content="website">
+  <title>計算ヒーロー - くりさがりのないひきざん</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -139,30 +136,81 @@
           </p>
         </div>
 
-        <!-- 中央：スカイブルー（新しいパワーパンチのポーズ） -->
+        <!-- 中央：スカイブルー（よりスタイリッシュ＆かっこいいヒーローポーズ） -->
         <div class="my-auto flex items-center justify-center z-10">
-          <svg class="w-48 h-36 sm:w-72 sm:h-48 drop-shadow-2xl" viewBox="0 0 200 140" role="img" aria-label="青いヒーローが空中でパンチするポーズ">
-            <circle cx="100" cy="70" r="58" fill="#bfdbfe" opacity="0.65"/>
-            <path d="M25 35 L5 25 M30 48 L3 48 M35 61 L12 72" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
-            <path d="M134 34 L174 14 L166 48 L145 58 Z" fill="#1d4ed8" opacity="0.9"/>
-            <path d="M85 83 L57 112 L39 117" stroke="#1d4ed8" stroke-width="15" stroke-linecap="round"/>
-            <path d="M85 83 L57 112 L39 117" stroke="#60a5fa" stroke-width="9" stroke-linecap="round"/>
-            <path d="M111 83 L137 108 L155 112" stroke="#1d4ed8" stroke-width="15" stroke-linecap="round"/>
-            <path d="M111 83 L137 108 L155 112" stroke="#60a5fa" stroke-width="9" stroke-linecap="round"/>
-            <path d="M73 48 L119 43 L135 88 L91 101 L67 78 Z" fill="#38bdf8" stroke="#1e40af" stroke-width="3"/>
-            <path d="M89 50 L103 64 L119 48 L111 47 L103 56 L96 49 Z" fill="#facc15" stroke="#1e293b" stroke-width="1.5"/>
-            <path d="M122 55 L157 31" stroke="#1d4ed8" stroke-width="13" stroke-linecap="round"/>
-            <path d="M122 55 L157 31" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round"/>
-            <circle cx="163" cy="26" r="13" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
-            <path d="M154 24 Q163 17 172 24 Q163 31 154 24 Z" fill="#fff" stroke="#0f172a" stroke-width="2"/>
-            <circle cx="159" cy="24" r="2" fill="#0f172a"/><circle cx="168" cy="24" r="2" fill="#0f172a"/>
-            <path d="M68 58 L37 43" stroke="#1d4ed8" stroke-width="12" stroke-linecap="round"/>
-            <path d="M68 58 L37 43" stroke="#7dd3fc" stroke-width="7" stroke-linecap="round"/>
-            <circle cx="88" cy="32" r="18" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
-            <path d="M73 30 Q88 20 103 30 Q88 40 73 30 Z" fill="#fff" stroke="#0f172a" stroke-width="2"/>
-            <circle cx="81" cy="30" r="2.5" fill="#0f172a"/><circle cx="95" cy="30" r="2.5" fill="#0f172a"/>
-            <path d="M88 13 L88 4 M80 15 L74 8 M96 15 L102 8" stroke="#facc15" stroke-width="4" stroke-linecap="round"/>
-            <path d="M146 12 L151 2 M178 54 L190 51 M25 92 L13 99" stroke="#facc15" stroke-width="4" stroke-linecap="round"/>
+          <svg class="w-52 h-40 sm:w-80 sm:h-52 drop-shadow-2xl" viewBox="0 0 200 150" role="img" aria-label="かっこいい青いヒーローのパワーポーズ">
+            <defs>
+              <linearGradient id="hero-aura" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="suit-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="50%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#1e3a8a"/>
+              </linearGradient>
+              <linearGradient id="cape-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ef4444"/>
+                <stop offset="100%" stop-color="#991b1b"/>
+              </linearGradient>
+              <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="100%" stop-color="#eab308"/>
+              </linearGradient>
+            </defs>
+
+            <!-- オーラ＆スピードライン -->
+            <circle cx="100" cy="75" r="62" fill="url(#hero-aura)" />
+            <path d="M 10 30 L 50 25 M 5 75 L 45 75 M 15 120 L 55 115" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+            <path d="M 195 20 L 165 30 M 190 125 L 160 115" stroke="#facc15" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+
+            <!-- ダイナミックになびく赤マント -->
+            <path d="M 85 45 C 50 20, 20 40, 10 75 C 25 85, 45 80, 65 65 Z" fill="url(#cape-grad)"/>
+            <path d="M 85 45 Q 40 10 15 30 C 35 45, 60 45, 75 52 Z" fill="#b91c1c"/>
+
+            <!-- 左脚 (奥) -->
+            <path d="M 80 90 L 55 125 L 40 122 L 65 85 Z" fill="#1e3a8a"/>
+            <path d="M 40 122 L 35 132 L 60 135 L 55 125 Z" fill="#0f172a"/>
+
+            <!-- 右脚 (手前の力強い踏み込み) -->
+            <path d="M 105 90 L 130 130 L 150 125 L 120 85 Z" fill="url(#suit-grad)" stroke="#1e3a8a" stroke-width="2"/>
+            <path d="M 130 130 L 135 140 L 160 135 L 150 125 Z" fill="#1e293b"/>
+            <!-- 膝プロテクター -->
+            <path d="M 115 100 L 125 105 L 118 115 L 108 110 Z" fill="url(#gold-grad)"/>
+
+            <!-- 胴体（引き締まったマッシブプロポーション） -->
+            <path d="M 75 82 L 115 82 L 112 90 L 78 90 Z" fill="#1e293b"/>
+            <rect x="88" y="80" width="14" height="12" rx="2" fill="url(#gold-grad)"/>
+            <path d="M 70 48 L 120 45 L 112 84 L 78 84 Z" fill="url(#suit-grad)" stroke="#1d4ed8" stroke-width="2"/>
+            <!-- 胸部のゴールドエンブレム -->
+            <path d="M 74 50 L 95 72 L 116 50 L 106 50 L 95 62 L 84 50 Z" fill="url(#gold-grad)"/>
+            <circle cx="95" cy="55" r="4" fill="#ffffff"/>
+
+            <!-- 左腕 (奥) -->
+            <path d="M 72 50 L 50 65 L 42 60 L 62 45 Z" fill="#0284c7"/>
+            <circle cx="43" cy="62" r="7" fill="#1e293b"/>
+
+            <!-- 頭部 & クールなバイザー -->
+            <path d="M 88 45 L 102 45 L 100 38 L 90 38 Z" fill="#0284c7"/>
+            <path d="M 80 32 C 80 15, 110 15, 110 32 C 110 40, 80 40, 80 32 Z" fill="url(#suit-grad)"/>
+            <path d="M 95 16 L 95 6 L 99 10 L 95 16 Z" fill="url(#gold-grad)"/>
+            <path d="M 82 22 L 74 15 L 82 26 Z" fill="url(#gold-grad)"/>
+            <path d="M 108 22 L 116 15 L 108 26 Z" fill="url(#gold-grad)"/>
+            <path d="M 83 25 Q 95 20 107 25 Q 95 35 83 25 Z" fill="#0f172a" stroke="url(#gold-grad)" stroke-width="1.5"/>
+            <path d="M 86 25 Q 95 22 104 25 Q 95 30 86 25 Z" fill="#ffffff"/>
+            <ellipse cx="91" cy="25" rx="3" ry="1.5" fill="#38bdf8"/>
+            <ellipse cx="99" cy="25" rx="3" ry="1.5" fill="#38bdf8"/>
+
+            <!-- 前突き右腕＆超強力パンチ -->
+            <path d="M 112 42 L 132 46 L 126 58 L 108 52 Z" fill="url(#gold-grad)"/>
+            <path d="M 122 48 L 155 58 L 148 72 L 118 58 Z" fill="url(#suit-grad)"/>
+            <circle cx="162" cy="66" r="16" fill="#1d4ed8" stroke="url(#gold-grad)" stroke-width="2.5"/>
+            <path d="M 152 58 Q 165 52 174 62 Q 165 74 152 68 Z" fill="#38bdf8"/>
+            <circle cx="166" cy="65" r="4" fill="#ffffff"/>
+
+            <!-- 衝撃波・パワーエフェクト -->
+            <path d="M 172 50 L 192 40 M 178 66 L 198 66 M 172 82 L 192 92" stroke="#facc15" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="180,60 184,65 190,65 185,69 187,75 182,71 177,75 179,69 174,65 180,65" fill="#facc15"/>
           </svg>
         </div>
 
@@ -185,7 +233,7 @@
     <!-- ========================================== -->
     <div class="w-2/3 h-full p-2.5 sm:p-4 flex flex-col justify-between bg-gradient-to-b from-pink-50/90 via-white to-pink-50/60 relative border-r-2 border-pink-100">
 
-      <!-- トップステータスバー：左詰めに「ステージ番号」「☆☆☆」、間を空けて右詰めに「ポイント」「ボーナスまで」「ずかん」 -->
+      <!-- トップステータスバー -->
       <div class="flex justify-between items-center bg-white/95 px-3 sm:px-4 py-1.5 rounded-2xl border border-pink-200 shadow-sm z-10 gap-2">
         
         <!-- 左詰め：ステージ番号 ＆ ☆☆☆ -->
@@ -276,7 +324,7 @@
 
       <!-- 下部解説バー ＆ 重ねて表示するヒーロードック -->
       <div class="relative w-full z-10">
-        <!-- 画面左下から順に並ぶヒーロードック (「みぎのカードをタップするか…」の上に重ねて表示) -->
+        <!-- 画面左下から順に並ぶヒーロードック -->
         <div id="hero-dock" class="absolute -top-12 left-1 flex items-end gap-1.5 overflow-x-auto max-w-[80%] z-20 pointer-events-auto pb-0.5">
           <!-- 100pt完走で獲得したヒーローがここに左から順に並ぶ -->
         </div>
@@ -319,7 +367,7 @@
   <!-- ========================================== -->
   <div id="dot-modal" class="fixed inset-0 bg-pink-950/80 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 p-2 sm:p-4">
     <div class="w-full max-w-3xl bg-white rounded-3xl p-3 sm:p-6 shadow-2xl border-4 border-rose-300 flex flex-col items-center justify-between relative overflow-hidden">
-      <!-- ヘッダー（添付画像デザイン） -->
+      <!-- ヘッダー -->
       <div class="flex justify-between items-center w-full bg-pink-50/80 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl border border-pink-200">
         <h2 class="text-base sm:text-2xl font-black text-rose-600 flex items-center gap-2 font-fredoka">
           <i class="fa-solid fa-pen-ruler text-pink-500"></i>
@@ -335,7 +383,7 @@
         <canvas id="dot-canvas" width="720" height="380" class="w-full max-h-[58vh] object-contain bg-[#fff8f9] rounded-2xl border-2 border-pink-100 shadow-inner"></canvas>
       </div>
 
-      <!-- フッター（添付画像デザイン） -->
+      <!-- フッター -->
       <div class="flex items-center justify-between w-full pt-2 border-t border-pink-100 gap-2">
         <span class="text-[11px] sm:text-sm font-extrabold text-pink-500 flex items-center gap-1">
           ポイントのぶん、てんが伸びるよ！100まで繋がるとヒーローがやってくる！
@@ -366,7 +414,7 @@
   <div id="bonus-modal" class="fixed inset-0 bg-gradient-to-br from-purple-900/90 via-pink-900/90 to-rose-900/90 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
     <div class="w-full max-w-4xl aspect-[16/9] max-h-[96vh] bg-white rounded-3xl p-3 sm:p-5 shadow-2xl border-4 border-yellow-300 flex flex-col justify-between relative overflow-hidden">
       
-      <!-- ヘッダー（常に1行で崩れないよう flex-nowrap / whitespace-nowrap 調整） -->
+      <!-- ヘッダー -->
       <div class="flex flex-nowrap justify-between items-center bg-yellow-50 px-2 sm:px-4 py-1.5 sm:py-2 rounded-2xl border border-yellow-200 gap-1 sm:gap-2 whitespace-nowrap overflow-hidden">
         <div class="flex items-center gap-1 sm:gap-2 min-w-0 flex-shrink">
           <i class="fa-solid fa-trophy text-amber-500 text-sm sm:text-lg flex-shrink-0"></i>
@@ -482,7 +530,7 @@
         const now = ctx.currentTime;
         
         if (type === 'correct') {
-          // 華やかなキラキラチャイム音 (C5, E5, G5, C6, E6, G6 の華やかな高音アルペジオ)
+          // 華やかなキラキラチャイム音
           const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51, 1567.98];
           notes.forEach((freq, idx) => {
             const osc = ctx.createOscillator();
@@ -665,8 +713,8 @@
         ]
       }
     ];
-    // くりさがりのないひきざん：0を使わず、答えも1以上の全45問
-    // 1〜9からのひき算（引く数は1以上、引かれる数未満）36問 + 10−1〜10−9の9問
+
+    // くりさがりのないひきざん：全45問
     const ALL_SUBTRACTION_PROBLEMS = [];
     for (let a = 1; a <= 9; a++) {
       for (let b = 1; b < a; b++) {
@@ -705,13 +753,12 @@
     // ドラッグ＆スワイプ解答用変数
     let activeDragClone = null;
     let isDraggingCard = false;
-    let hasShownFirstDragGuide = false; // 1問目のガイドアニメーション実行済みフラグ
+    let hasShownFirstDragGuide = false;
 
     // ==========================================
     // 3. 問題プール & 点つなぎモチーフ処理
     // ==========================================
     function initProblemPool() {
-      // 全45問を一度ずつシャッフル。一巡後に新しい順番で再開する。
       problemPool = [...ALL_SUBTRACTION_PROBLEMS];
       for (let i = problemPool.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -789,14 +836,11 @@
 
       for (let i = 0; i <= 10; i++) {
         const btn = document.createElement('button');
-        // 面取り正方形デザイン
         btn.className = 'num-card-square aspect-square w-full bg-gradient-to-br from-white to-pink-50 border-3 sm:border-4 border-pink-300 rounded-2xl sm:rounded-3xl shadow-[0_4px_0_#f472b6] sm:shadow-[0_5px_0_#f472b6] hover:shadow-[0_6px_0_#f472b6] active:translate-y-1 active:shadow-none font-fredoka text-2xl sm:text-4xl font-black text-rose-600 flex items-center justify-center cursor-grab select-none transition-all touch-none';
         btn.innerText = i;
         btn.dataset.val = i;
 
-        // Pointer Eventsを使ったスムーズなスワイプ（ドラッグ）操作
         attachPointerSwipeEvents(btn, i);
-
         grid.appendChild(btn);
       }
     }
@@ -839,7 +883,6 @@
         if (slot) slot.classList.remove('drag-over');
 
         if (isMoved) {
-          // ドロップ位置が答えスロット内かチェック
           if (slot) {
             const rect = slot.getBoundingClientRect();
             const isInside = (
@@ -858,15 +901,12 @@
             removeDragClone();
           }
         } else {
-          // タップ操作のみの場合
           removeDragClone();
           
-          // 1問目（かつ未ガイド）の場合はスワイプお手本アニメーション（正解にはせず、お手本を見せるのみ）
           if (stage === 1 && problemIndex === 0 && !hasShownFirstDragGuide) {
             hasShownFirstDragGuide = true;
             showSwipeDemoAnimation(btn, val);
           } else {
-            // ガイド済みまたは2問目以降のタップ時は「スワイプしてね！」案内を表示
             showSwipeMessage();
           }
         }
@@ -927,7 +967,6 @@
       }
     }
 
-    // 1問目専用：タップ時にお手本として枠の直前まで移動するアニメーション（正解処理はしない）
     function showSwipeDemoAnimation(btn, val) {
       if (isLocked) return;
       isLocked = true;
@@ -936,11 +975,9 @@
       const slot = document.getElementById('answer-slot');
       const slotRect = slot.getBoundingClientRect();
 
-      // 枠の手前でストップさせる位置
       const targetLeft = slotRect.left + (btnRect.left > slotRect.left ? 35 : -35);
       const targetTop = slotRect.top;
 
-      // お手本カード（移動速度をゆっくり duration-[1500ms] に調整）
       const flyCard = document.createElement('div');
       flyCard.className = 'fixed rounded-2xl border-4 border-rose-500 bg-white/95 text-rose-600 font-fredoka text-3xl sm:text-5xl font-black flex items-center justify-center shadow-2xl z-50 pointer-events-none transition-all duration-[1500ms] ease-out';
       flyCard.innerText = val;
@@ -949,7 +986,6 @@
       flyCard.style.width = `${btnRect.width}px`;
       flyCard.style.height = `${btnRect.height}px`;
 
-      // 指アイコン
       const fingerIcon = document.createElement('div');
       fingerIcon.className = 'fixed text-3xl sm:text-4xl text-rose-600 z-50 pointer-events-none transition-all duration-[1500ms] ease-out drop-shadow-md';
       fingerIcon.innerHTML = '<i class="fa-solid fa-hand-pointer animate-bounce"></i>';
@@ -961,7 +997,6 @@
 
       playSound('tap');
 
-      // 答え枠の直前までゆっくり移動
       setTimeout(() => {
         flyCard.style.left = `${targetLeft}px`;
         flyCard.style.top = `${targetTop}px`;
@@ -971,7 +1006,6 @@
         fingerIcon.style.top = `${targetTop + 20}px`;
       }, 50);
 
-      // 直前で消える
       setTimeout(() => {
         flyCard.style.opacity = '0';
         flyCard.style.transform = 'scale(0.8)';
@@ -982,8 +1016,6 @@
         flyCard.remove();
         fingerIcon.remove();
         isLocked = false;
-        
-        // 自分でスワイプするよう促すメッセージ
         showSwipeMessage("👆 じぶんで すうじを わくへ スワイプ（ドラッグ）してみよう！");
       }, 1800);
     }
@@ -1009,7 +1041,6 @@
         updateHeaderUI();
         saveGameProgress();
 
-        // 正解時に1秒間(1000ms)静止してから次の問題・点つなぎへ進む
         setTimeout(() => {
           problemIndex++;
 
@@ -1028,11 +1059,6 @@
           slotText.className = "text-pink-300 font-bold text-2xl sm:text-4xl z-10";
         }, 500);
       }
-    }
-
-    // ドラッグ＆ドロップ後互換用
-    function handleCardClick(val) {
-      // スワイプ統一のため不使用
     }
 
     function handleDragOver(e) {
@@ -1102,12 +1128,9 @@
       const blocksLeft = document.getElementById('blocks-left');
       const blocksRight = document.getElementById('blocks-right');
 
-      // オレンジを左から一列に並べ、青は同じ幅の行の右端に揃える。
-      // 青の右端は、必ずオレンジの右端と一致する。
       blocksLeft.innerHTML = createBlockTilesSVG(p.num1, 'orange');
       blocksRight.innerHTML = createBlockTilesSVG(p.num2, 'blue');
       if (blocksLeft) {
-        // 外側の枠幅を同じにすることで、内側の余白を差し引いた右端同士が一致する。
         blocksRight.style.width = `${blocksLeft.getBoundingClientRect().width}px`;
       }
       container.classList.remove('opacity-0', 'pointer-events-none');
