@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>計算ヒーロー02</title>
-  <meta property="og:title" content="計算ヒーロー02">
-    <meta property="og:description" content="【１年算数ひきざん】くりさがりのないひきざんの練習アプリです。">
-    <meta property="og:type" content="website">
+  <title>計算ヒーロー - くりさがりのないひきざん</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -119,13 +116,13 @@
     <!-- 【トップ画面】計算ヒーロー スタート画面 -->
     <!-- ========================================== -->
     <div id="title-screen" class="absolute inset-0 bg-pink-950/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4 transition-opacity duration-300">
-      <div class="w-[90%] h-[92%] max-w-2xl bg-gradient-to-br from-pink-100 via-rose-50 to-pink-200 rounded-3xl border-4 sm:border-6 border-rose-300 shadow-2xl flex flex-col items-center justify-between p-3 sm:p-5 relative overflow-hidden">
+      <div class="w-[90%] h-[92%] max-w-2xl bg-gradient-to-br from-sky-100 via-blue-50 to-cyan-100 rounded-3xl border-4 sm:border-6 border-sky-400 shadow-2xl flex flex-col items-center justify-between p-3 sm:p-5 relative overflow-hidden">
         
         <!-- 背景装飾 -->
-        <div class="absolute inset-0 pointer-events-none opacity-30">
+        <div class="absolute inset-0 pointer-events-none opacity-40">
           <div class="absolute top-3 left-6 text-yellow-400 text-2xl animate-bounce"><i class="fa-solid fa-star"></i></div>
-          <div class="absolute bottom-5 right-6 text-pink-400 text-3xl animate-pulse"><i class="fa-solid fa-sparkles"></i></div>
-          <div class="absolute top-1/3 right-8 text-rose-300 text-xl animate-bounce"><i class="fa-solid fa-star"></i></div>
+          <div class="absolute bottom-5 right-6 text-sky-400 text-3xl animate-pulse"><i class="fa-solid fa-sparkles"></i></div>
+          <div class="absolute top-1/3 right-8 text-cyan-400 text-xl animate-bounce"><i class="fa-solid fa-star"></i></div>
         </div>
 
         <!-- タイトル＆サブタイトル -->
@@ -133,8 +130,9 @@
           <h1 class="text-3xl sm:text-5xl font-black text-rose-600 drop-shadow-md tracking-wider flex items-center justify-center gap-2 font-fredoka">
             <ruby>計算<rt class="text-xs sm:text-base font-extrabold text-pink-500 font-rounded">けいさん</rt></ruby>
             <ruby>ヒーロー<rt class="text-xs sm:text-base font-extrabold text-pink-500 font-rounded">HERO</rt></ruby>
+            <ruby>０２<rt class="text-xs sm:text-base font-extrabold text-pink-500 font-rounded">ゼロツー</rt></ruby>
           </h1>
-          <p class="text-xs sm:text-xl font-black text-pink-600 mt-1.5 tracking-wide bg-white/80 px-5 py-1 rounded-full border-2 border-pink-300 shadow-sm whitespace-nowrap">
+          <p class="text-xs sm:text-xl font-black text-sky-600 mt-1.5 tracking-wide bg-white/90 px-5 py-1 rounded-full border-2 border-sky-400 shadow-sm whitespace-nowrap">
             くりさがりのないひきざん
           </p>
         </div>
@@ -350,12 +348,6 @@
     <!-- ========================================== -->
     <div class="w-1/3 h-full p-2 sm:p-3 bg-gradient-to-b from-pink-100/80 to-rose-100/80 flex flex-col items-center justify-between border-l border-pink-200 relative overflow-hidden">
       
-      <!-- 案内ラベル -->
-      <div class="text-xs sm:text-sm font-black text-rose-600 bg-white/95 px-3 py-1 rounded-full border border-pink-300 shadow-sm mb-1 flex items-center gap-1.5 flex-shrink-0">
-        <i class="fa-solid fa-hand-pointer text-pink-500 animate-bounce"></i>
-        <span>すうじを えらぼう！</span>
-      </div>
-
       <!-- 0〜10 全てが見える面取り正方形グリッド (3列配置) -->
       <div id="cards-grid" class="grid grid-cols-3 gap-1.5 sm:gap-2.5 w-full max-w-[260px] sm:max-w-[320px] my-auto justify-items-stretch items-stretch p-1">
         <!-- JSで0〜10の11個の面取り正方形カードを生成 -->
@@ -839,7 +831,7 @@
 
       for (let i = 0; i <= 10; i++) {
         const btn = document.createElement('button');
-        btn.className = 'num-card-square aspect-square w-full bg-gradient-to-br from-white to-pink-50 border-3 sm:border-4 border-pink-300 rounded-2xl sm:rounded-3xl shadow-[0_4px_0_#f472b6] sm:shadow-[0_5px_0_#f472b6] hover:shadow-[0_6px_0_#f472b6] active:translate-y-1 active:shadow-none font-fredoka text-2xl sm:text-4xl font-black text-rose-600 flex items-center justify-center cursor-grab select-none transition-all touch-none';
+        btn.className = 'num-card-square aspect-square w-full bg-gradient-to-br from-white to-pink-50 border-3 sm:border-4 border-pink-300 rounded-2xl sm:rounded-3xl shadow-[0_4px_0_#f472b6] sm:shadow-[0_5px_0_#f472b6] hover:shadow-[0_6px_0_#f472b6] active:translate-y-1 active:shadow-none font-fredoka text-2xl sm:text-4xl font-black text-gray-900 flex items-center justify-center cursor-grab select-none transition-all touch-none';
         btn.innerText = i;
         btn.dataset.val = i;
 
@@ -922,7 +914,7 @@
     function createDragClone(val, x, y) {
       removeDragClone();
       const clone = document.createElement('div');
-      clone.className = 'fixed rounded-2xl border-4 border-rose-500 bg-white text-rose-600 font-fredoka text-3xl sm:text-5xl font-black flex items-center justify-center shadow-2xl z-50 pointer-events-none transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20';
+      clone.className = 'fixed rounded-2xl border-4 border-rose-500 bg-white text-gray-900 font-fredoka text-3xl sm:text-5xl font-black flex items-center justify-center shadow-2xl z-50 pointer-events-none transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20';
       clone.innerText = val;
       clone.style.left = `${x}px`;
       clone.style.top = `${y}px`;
@@ -982,7 +974,7 @@
       const targetTop = slotRect.top;
 
       const flyCard = document.createElement('div');
-      flyCard.className = 'fixed rounded-2xl border-4 border-rose-500 bg-white/95 text-rose-600 font-fredoka text-3xl sm:text-5xl font-black flex items-center justify-center shadow-2xl z-50 pointer-events-none transition-all duration-[1500ms] ease-out';
+      flyCard.className = 'fixed rounded-2xl border-4 border-rose-500 bg-white/95 text-gray-900 font-fredoka text-3xl sm:text-5xl font-black flex items-center justify-center shadow-2xl z-50 pointer-events-none transition-all duration-[1500ms] ease-out';
       flyCard.innerText = val;
       flyCard.style.left = `${btnRect.left}px`;
       flyCard.style.top = `${btnRect.top}px`;
@@ -1033,6 +1025,8 @@
       if (val === p.ans) {
         isLocked = true;
         playSound('correct');
+
+        slotText.className = "text-red-600 font-black text-2xl sm:text-4xl z-10 font-fredoka animate-pop-in";
 
         const pts = isHintUsedCurrentProblem ? 2 : 4;
         totalScore += pts;
