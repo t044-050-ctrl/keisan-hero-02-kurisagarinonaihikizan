@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>計算ヒーロー02</title>
-  <meta property="og:title" content="計算ヒーロー02">
-    <meta property="og:description" content="【１年算数ひき算】繰り下がりのないひき算の練習アプリです。">
-    <meta property="og:type" content="website">
+  <title>計算ヒーロー - くりさがりのないひきざん</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -321,8 +318,10 @@
 
         <!-- 数図ブロック：青の右端をオレンジの右端に揃える -->
         <div id="block-hint-container" class="w-full max-w-[390px] flex flex-col items-center justify-center gap-1 my-2 bg-white/95 px-3 sm:px-4 py-2 rounded-2xl border-2 border-pink-200 shadow-md transition-all opacity-0 pointer-events-none">
-          <div id="blocks-left" class="flex flex-row items-center justify-start bg-rose-50/60 p-1 rounded-xl border border-rose-200"></div>
-          <div id="blocks-right" class="flex flex-row items-center justify-end bg-blue-50/60 p-1 rounded-xl border border-blue-200"></div>
+          <div class="inline-flex flex-col gap-1 w-fit">
+            <div id="blocks-left" class="flex flex-row items-center justify-start bg-rose-50/60 p-1 rounded-xl border border-rose-200 w-full"></div>
+            <div id="blocks-right" class="flex flex-row items-center justify-end bg-blue-50/60 p-1 rounded-xl border border-blue-200 w-full"></div>
+          </div>
         </div>
       </div>
 
@@ -746,6 +745,7 @@
     let lastBonusLeftNum = null;
 
     let currentMotif = null;
+    let lastMotifIndex = -1;
     let dotPoints = [];
 
     // ドラッグ＆スワイプ解答用変数
@@ -804,7 +804,12 @@
     }
 
     function selectRandomMotif() {
-      const idx = Math.floor(Math.random() * MOTIFS_DATA.length);
+      let idx;
+      do {
+        idx = Math.floor(Math.random() * MOTIFS_DATA.length);
+      } while (idx === lastMotifIndex && MOTIFS_DATA.length > 1);
+      
+      lastMotifIndex = idx;
       currentMotif = MOTIFS_DATA[idx];
       dotPoints = generate100PointsFromKeypoints(currentMotif.keypoints);
       const elem = document.getElementById('dot-motif-name');
@@ -1130,9 +1135,6 @@
 
       blocksLeft.innerHTML = createBlockTilesSVG(p.num1, 'orange');
       blocksRight.innerHTML = createBlockTilesSVG(p.num2, 'blue');
-      if (blocksLeft) {
-        blocksRight.style.width = `${blocksLeft.getBoundingClientRect().width}px`;
-      }
       container.classList.remove('opacity-0', 'pointer-events-none');
     }
 
@@ -1148,7 +1150,7 @@
           </div>
         `;
       }
-      return `<div class="flex flex-row flex-nowrap gap-0.5 sm:gap-1 w-max ${color === 'blue' ? 'justify-end' : 'justify-start'}">${tiles}</div>`;
+      return `<div class="flex flex-row flex-nowrap gap-0.5 sm:gap-1 w-full ${color === 'blue' ? 'justify-end' : 'justify-start'}">${tiles}</div>`;
     }
 
     function renderProblem() {
